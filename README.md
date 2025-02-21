@@ -8,6 +8,7 @@ Generate a Report to get -
 2. Top markets by fiscal year
 3. Top products by fiscal year
 4. Top customers by fiscal year
+5. Performance tuning of the complex queries
 
 **Calculate Net Sales:**
 
