@@ -48,12 +48,11 @@ Data is imported from Atliq Database
 
 **Recommendations**
 
-Use Report to
 
-1. Understand monthly sales of customers and identify last sales months and strategize to improve sales  
+1. Understanding Top Markets and the strategy and plan upcoming events
 
-2. Understand yearly sales of customers to get Year over year change percentage and plan accordingly
+2. Understanding Top Products and the strategy and plan upcoming  product events
 
-3. Quickly get the market performance by determining market badge
+3. Understanding Top customers and and the strategy and plan relationships with them.
 
 4. Slice and dice data to drill down the hidden insights
