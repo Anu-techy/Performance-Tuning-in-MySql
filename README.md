@@ -25,4 +25,35 @@ A **Pre invoice Deductions** refers to a reduction or discount applied to the pr
 **Net sales** refers to the total revenue a company generates from selling goods or services after accounting for all deductions such as discounts, returns, allowances, and any other adjustments. It represents the actual sales the company made and is an important metric for understanding the business's true revenue.
 
                                           Net Sales = Net invoice Sales - Post invoice Deductions
-                                          
+
+**ETL (Extract Transform Load) Process**
+
+Data is imported from Atliq Database
+
+**Dimension tables** : 
+1. dim_customer (customer_code, customer, platform, market, sub_zone, region)
+2. dim_product (product_code, division, segment, category, product, variant)
+
+**Fact tables/Transaction tables** : 
+
+1. fact_sales_monthly (monthly aggregated data in start of the month date, product_code, customer_code, sold_quantity )
+2. fact_freight_Cost (market, fiscal_year, freight_pct, other_cost_pct)
+3. fact_gross_price (product_code, fiscal_year, gross_price)
+4. fact_manufacturing_cost (product_code, cost_year/fiscal_year, manufacturing_cost)
+5. fact_post_invoice_deductions (customer_code, product_code, date, discounts_pct, other_deductions_pct)
+6. fact_pre_invoice_deductions (customer_code, fiscal_year, pre_invoice_discount_pct)
+
+=======================================================================
+                     
+
+**Recommendations**
+
+Use Report to
+
+1. Understand monthly sales of customers and identify last sales months and strategize to improve sales  
+
+2. Understand yearly sales of customers to get Year over year change percentage and plan accordingly
+
+3. Quickly get the market performance by determining market badge
+
+4. Slice and dice data to drill down the hidden insights
