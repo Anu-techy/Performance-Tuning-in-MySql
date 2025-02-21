@@ -20,11 +20,7 @@ A **Pre invoice Deductions** refers to a reduction or discount applied to the pr
 
                                           Net invoice sales = Gross Price - Pre invoice Deductions
                                           
-**Post invoice Deductions** are reductions made to the amount due on an invoice after it has been issued. These deductions usually occur after the sale has been completed and the invoice has been sent, and they can be due to various volumne discounts, returns, product defects, shipping delays etc.
 
-**Net sales** refers to the total revenue a company generates from selling goods or services after accounting for all deductions such as discounts, returns, allowances, and any other adjustments. It represents the actual sales the company made and is an important metric for understanding the business's true revenue.
-
-                                          Net Sales = Net invoice Sales - Post invoice Deductions
 
 **ETL (Extract Transform Load) Process**
 
