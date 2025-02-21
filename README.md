@@ -2,15 +2,17 @@
 
 **Aim**
 
-Generate a Report to get -
+1. Write a query generate a table which 
+   
+                            •	Calculates gross_price_total and 
+                            •	Retrieves pre invoice discount pct
+   
+    To subsequently calculate net_invoice_sales for a given financial year.
 
-1. Calculate Net Sales (in millions)
-2. Top markets by fiscal year
-3. Top products by fiscal year
-4. Top customers by fiscal year
-5. Performance tuning of the complex queries
+2. Optimizing the query by creating a lookup table
+3. Optimizing the query by adding a extra and reducing join
 
-**Calculate Net Sales:**
+**Description**
 
 The **Gross Price** refers to the total price of a product or service before any deductions, such as taxes, discounts, or other costs, are subtracted.
 
@@ -40,8 +42,7 @@ Data is imported from Atliq Database
 6. fact_pre_invoice_deductions (customer_code, fiscal_year, pre_invoice_discount_pct)
 
 =======================================================================
-                     
-
+             
 **Recommendations**
 
 
