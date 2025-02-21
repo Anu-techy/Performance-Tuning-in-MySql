@@ -1,4 +1,4 @@
-# Performance-Tuning-in-MySql-for-Identifying-Top-Products-Markets-and-Customers
+# Performance-Tuning-in-MySql
 
 **Aim**
 
