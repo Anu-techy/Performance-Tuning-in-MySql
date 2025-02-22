@@ -44,6 +44,7 @@ Data is imported from Atliq Database
 6. fact_pre_invoice_deductions (customer_code, fiscal_year, pre_invoice_discount_pct)
 
 =======================================================================
+
 **Results**
 
 1. **Execution time is 7 seconds** for the query to Calculate gross_price_total and	Retrieve pre invoice discount pct_sales for a given financial year.
