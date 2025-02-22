@@ -51,15 +51,15 @@ Data is imported from Atliq Database
    
 **Important points to consider when optimizing complex queries:**
 
-1. Create indexes on columns frequently used in WHERE, JOIN, ORDER BY, and GROUP BY clauses.
+1. **Create indexes** on columns frequently used in WHERE, JOIN, ORDER BY, and GROUP BY clauses.
 
-2. Avoid SELECT * (Wildcard)
+2. **Avoid SELECT * (Wildcard)**
    
    Specify only the columns you need in your SELECT statement rather than using SELECT *.
    
    This reduces the amount of data transferred and processed.
 
-3. Optimize Joins
+3. **Optimize Joins**
    
    Ensure that the columns you're joining on are indexed.
    
@@ -67,19 +67,19 @@ Data is imported from Atliq Database
    
    Be mindful of the join order — in some cases, the order in which tables are joined can impact performance.
 
-4. Limit Rows (Pagination)
+4. **Limit Rows (Pagination)**
    
 If you only need a subset of data, use LIMIT to restrict the number of rows returned.
 
 This is especially useful in cases of large result sets (e.g., pagination in a web app).
 
-5. Use WHERE Clauses Wisely
+5. **Use WHERE Clauses Wisely**
    
 Be as specific as possible in the WHERE clause to reduce the number of rows MySQL has to scan.
 
 Avoid using functions like LIKE '%text%' or NOT IN, which can prevent indexes from being used effectively.
 
-6. Consider Query Execution Plan (EXPLAIN)
+6. **Consider Query Execution Plan (EXPLAIN)**
    
 Use the EXPLAIN keyword to analyze query performance and understand how MySQL executes your query. 
 
@@ -87,19 +87,19 @@ This shows how indexes are being used, the order of joins, and whether full tabl
 
 Look for full table scans, file sort, or temporary tables that might indicate areas of inefficiency.
 
-7. Avoid Subqueries Where Possible
+7. **Avoid Subqueries Where Possible**
     
 Subqueries (especially in SELECT statements) can be inefficient, particularly when the result set is large.
 
 Try to rewrite subqueries as joins, or use derived tables if appropriate.
 
-8. Optimize Aggregate Functions
+8. **Optimize Aggregate Functions**
     
 When using aggregate functions like COUNT(), SUM(), or AVG(), ensure that the data you're aggregating is filtered appropriately.
 
 Use indexes on columns used for GROUP BY to speed up the process.
 
-9. Consider Query Caching
+9. **Consider Query Caching**
     
 MySQL has a query cache that can store the result of a query. 
 
@@ -107,59 +107,59 @@ For repetitive queries that don’t change frequently, query caching can speed u
 
 Be aware of cache invalidation when data is updated.
 
-10. Denormalization (When Appropriate)
+10. **Denormalization (When Appropriate)**
     
 In some cases, denormalizing tables (storing redundant data) can help reduce complex joins and improve query speed, especially for read-heavy operations. But be cautious of the data redundancy trade-offs.
 
-11. Use Proper Data Types
+11. **Use Proper Data Types**
     
 Ensure that the data types of your columns match the data you're storing (e.g., use INT instead of VARCHAR for numeric data). This saves space and reduces the overhead of type conversions.
 
 For dates and times, use appropriate date/time types (DATE, DATETIME, etc.) instead of strings.
 
-12. Partition Large Tables
+12. **Partition Large Tables**
  
 For very large tables, partitioning can improve performance by dividing the table into smaller, more manageable pieces, making queries more efficient.
 
-13. Avoid Complex Expressions in WHERE Clause
+13. **Avoid Complex Expressions in WHERE Clause**
     
 Expressions in the WHERE clause, such as YEAR(date_column) = 2025, can prevent the use of indexes efficiently. 
 
 Instead, try to filter by range (e.g., date_column BETWEEN '2025-01-01' AND '2025-12-31').
 
-14. Use Batch Processing for Large Datasets
+14. **Use Batch Processing for Large Datasets**
     
 When dealing with very large datasets, batch processing (dividing the workload into smaller chunks) can help avoid locking issues and reduce load.
 
-15. Optimize Temporary Tables and Sorting
+15. **Optimize Temporary Tables and Sorting**
     
 If MySQL has to create temporary tables or use filesort (for sorting), this can negatively impact performance. 
 
 Consider optimizing queries to avoid these operations when possible.
 
-16. Limit Use of OR Conditions
+16. **Limit Use of OR Conditions**
     
 Using OR in queries can prevent MySQL from using indexes effectively.
 
 If possible, break the query into multiple queries or use UNION instead.
 
-17. Avoid Using DISTINCT Unnecessarily
+17. **Avoid Using DISTINCT Unnecessarily**
     
 The DISTINCT keyword can be computationally expensive, so avoid using it unless necessary. Sometimes, refactoring the query can eliminate the need for DISTINCT.
 
-18. Optimize Data Storage and Indexing
+18. **Optimize Data Storage and Indexing**
     
 Ensure that data storage is optimized by regularly optimizing and analyzing tables (OPTIMIZE TABLE), especially for large datasets.
 
 Regularly defragment tables and indexes to ensure that query performance remains optimal.
 
-19. Review and Optimize Application Logic
+19. **Review and Optimize Application Logic**
 
 Sometimes the problem isn't just the query but how the application handles it. 
 
 Ensure that application logic (such as filtering, pagination, etc.) is optimized to minimize the amount of data being queried and processed.
 
-Conclusion:
+**Conclusion:**
 
 Optimizing complex queries involves understanding the data structure, knowing how MySQL executes queries, and leveraging indexing, filtering, and query rewriting to improve performance. 
 
