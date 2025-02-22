@@ -10,7 +10,7 @@
     To subsequently calculate net_invoice_sales for a given financial year.
 
 2. Optimizing the query by creating a lookup table
-3. Optimizing the query by adding a extra and reducing join
+3. Optimizing the query by adding a extra column and reducing join
 
 **Description**
 
@@ -44,7 +44,14 @@ Data is imported from Atliq Database
 6. fact_pre_invoice_deductions (customer_code, fiscal_year, pre_invoice_discount_pct)
 
 =======================================================================
-             
+**Results**
+
+1. **Execution time is 7 seconds** for the query to Calculate gross_price_total and	Retrieve pre invoice discount pct_sales for a given financial year.
+
+2. **Execution time reduced to 3 seconds** when optimized the query by creating a lookup table
+
+3. **Execution time is 2 seconds** when optimized the query by adding a extra column and reduced a join
+            
 **Recommendations**
 
 1. Analyze with EXPLAIN and Check the query execution plan.
